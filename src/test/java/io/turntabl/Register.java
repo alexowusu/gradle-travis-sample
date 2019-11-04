@@ -8,12 +8,20 @@ import java.util.stream.Stream;
 
 public class Register {
  public List<Client> clients = Arrays.asList(
-      new Client("kofi",123,ServiceLevel.GOLD,TypeOfClient.PRIVATE),
-         new Client("ama",234,ServiceLevel.PLATINUM,TypeOfClient.COOPERATE),
-         new Client("voltic",345,ServiceLevel.PREMIUM,TypeOfClient.COOPERATE)
- );
- long name = clients.stream().filter(client -> client.getTypeOfClient()==TypeOfClient.COOPERATE).count();
+            new Client("kofi",123,ServiceLevel.GOLD,TypeOfClient.PRIVATE),
+            new Client("ama",234,ServiceLevel.PLATINUM,TypeOfClient.COOPERATE),
+            new Client("voltic",345,ServiceLevel.PREMIUM,TypeOfClient.COOPERATE)
+    );
 
+    public Register(List<Client> clients) {
+        this.clients =clients;
+    }
+
+
+    public long fh(){
+      long name = clients.stream().filter(client -> client.getTypeOfClient()==TypeOfClient.COOPERATE).count();
+      return name;
+  }
     public List<Client> getClients( TypeOfClient typeOfClient) {
         List<String> clientsName = new ArrayList<>();
         return clients;
