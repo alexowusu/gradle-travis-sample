@@ -1,5 +1,6 @@
 package io.turntabl;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collector;
@@ -13,6 +14,9 @@ public class Register {
  );
  long name = clients.stream().filter(client -> client.getTypeOfClient()==TypeOfClient.COOPERATE).count();
 
-
+    public List<Client> getClients( TypeOfClient typeOfClient) {
+        List<String> clientsName = new ArrayList<>();
+        return clients;
+    }
 }
 
